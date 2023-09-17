@@ -9,10 +9,20 @@
     "web": "expo start --web"
   },
   "dependencies": {
+    "@expo-google-fonts/poppins": "^0.2.3",
+    "@react-navigation/native": "^6.1.7",
+    "@react-navigation/stack": "^6.3.17",
+    "@reduxjs/toolkit": "^1.9.5",
+    "@types/redux-logger": "^3.0.9",
     "expo": "~49.0.10",
+    "expo-app-loading": "^2.1.1",
+    "expo-splash-screen": "^0.22.0",
     "expo-status-bar": "~1.6.0",
+    "font": "^0.0.4",
     "react": "18.2.0",
-    "react-native": "0.72.4"
+    "react-native": "0.72.4",
+    "react-redux": "^8.1.2",
+    "redux-logger": "^3.0.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.0",
