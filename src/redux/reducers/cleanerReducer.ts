@@ -1,17 +1,20 @@
 import { UPDATE_CLEANER_DETAILS } from "../actions";
 
 const initialCleanerState = {
-  username: null,
-  password: null,
-  personalDetails: null,
-  cleaningDetails: null,
-  availability: null,
-  pricing: null,
-  documents: null,
-  account: null,
-  loading: false,
-  error: null
-};
+    username: null,
+    password: null, // Just a note: Never store actual passwords in the frontend state, even if it's hashed.
+    firstName: null,
+    lastName: null,
+    email: null,
+    phone: null,
+    cleaningExperience: null,
+    cleaningSpecialty: null,
+    daysAvailable: null,
+    hourlyRate: null,
+    loading: false,
+    error: null
+  };
+  
 
 export const cleanerReducer = (state = initialCleanerState, action: any) => {
   switch(action.type) {
