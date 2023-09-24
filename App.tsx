@@ -8,14 +8,13 @@ import { useFonts } from 'expo-font';
 import HomeScreen from './src/components/screens/HomeScreen';
 import CleanerGetStartedScreen from './src/components/screens/CleanerFlow/CleanerGetStartedScreen';
 import UserIdAndPassword from './src/components/screens/UserIdAndPassword';
+import CleanerExperience from './src/components/screens/CleanerFlow/CleanerExperience';
 
 import { Provider } from 'react-redux';
 import store from './src/redux/store'
 
 
 function App(): JSX.Element {
-  // SplashScreen.preventAutoHideAsync();
-
   const Stack = createStackNavigator();
 
   return (
@@ -25,6 +24,7 @@ function App(): JSX.Element {
             <Stack.Screen name="Home" component={HomeScreen} />
             <Stack.Screen name="CleanerGetStarted" component={CleanerGetStartedScreen} />
             <Stack.Screen name="LoginCapture" component={UserIdAndPassword} />
+            <Stack.Screen name="CleanerExperience" component={CleanerExperience} />
           </Stack.Navigator>
       </NavigationContainer>
     </Provider>

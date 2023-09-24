@@ -4,6 +4,10 @@ const globalStyles = StyleSheet.create({
   container: {
     flex: 1,
   },
+  sectionContainer: {
+    marginTop: 20,
+    padding: 30
+  },
   primaryButton: {
     padding: 10,
     paddingVertical: 15,
@@ -36,6 +40,15 @@ const globalStyles = StyleSheet.create({
   buttonText: {
     fontSize: 18,
   },
+  header: {
+    fontSize: 28,
+    fontWeight: 'bold',
+  },
+  subHeader: {
+    fontSize: 16,
+    marginTop: 20,
+    lineHeight: 25
+  }
 });
 
 export default globalStyles;

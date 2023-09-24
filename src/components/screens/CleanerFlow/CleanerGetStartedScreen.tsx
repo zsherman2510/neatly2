@@ -13,7 +13,7 @@ import CustomText from '../../common/CustomText';
 import globalStyles from '../../common/globalStyles';
 import {TouchableOpacity} from 'react-native-gesture-handler';
 
-import {updateCleanerDetails} from '../../../redux/actions/cleanerActions';
+import {updateCleanerPersonalData} from '../../../redux/actions/cleanerActions';
 
 type GetStartedScreenProps = {
   navigation: any;
@@ -56,7 +56,8 @@ const CleanerGetStartedScreen: React.FC<GetStartedScreenProps> = ({
       dateOfBirth,
       gender: selectedGender,
     };
-    dispatch(updateCleanerDetails(personalDetails));
+    dispatch(updateCleanerPersonalData(personalDetails));
+    navigation.navigate('CleanerExperience');
   };
   return (
     <SafeAreaView>

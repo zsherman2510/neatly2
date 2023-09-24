@@ -11,17 +11,18 @@ export type PersonalDetails = {
 
 export type CleaningDetails = {
   // Define the structure of your cleaning details here, e.g.
-  servicesProvided: string[];
-  experience: number;
+  cleaningExperience: string,
+  cleaningSpecialty: string[],
+  daysAvailable: string[],
+  hourlyRate: string,
   // ... other cleaning details
 };
 
-export type CleanerPayload = {
-  // Define the structure of a cleaner object, e.g.
-  id: string;
+export type AccountCreationData = {
   personalDetails: PersonalDetails;
   cleaningDetails: CleaningDetails;
-  // ... other cleaner attributes
+  documents: any[] | null; // Assuming documents might be a more complex type. Define accordingly.
+  account: any | null; // Define the shape of the 'account' based on your data structure.
 };
 
 export type ErrorPayload = {
