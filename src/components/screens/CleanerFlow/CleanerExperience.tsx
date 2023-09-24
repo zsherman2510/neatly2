@@ -84,7 +84,7 @@ const CleanerExperienceScreen: React.FC<CleanerExperienceProps> = ({ navigation 
       if (isExperienceValid && isSpecialtyValid && isDaysValid && isHourlyRateValid) {
           console.log('Submitted Cleaner Experience');
           dispatch(updateCleanerSpeciality(userData));
-          navigation.navigate('CreateUser');
+          navigation.navigate('DocumentUploader');
       }
   };
 

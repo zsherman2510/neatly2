@@ -40,6 +40,11 @@ export const cleanerReducer = (state = initialCleanerState, action: any) => {
           ...action.payload,
         },
       };
+    case "UPDATE_CLEANER_DOCUMENTS": 
+      return {
+        ...state,
+        documents: action.payload
+      }
     case "REGISTER_CLEANER_REQUEST":
       return {
         ...state,

@@ -10,3 +10,8 @@ export const updateCleanerSpeciality = (userData: CleaningDetails) => ({
   type: UPDATE_CLEANER_DETAILS,
   payload: userData
 });
+
+export const updateCleanerDocuments = (documentUri: string) => ({
+  type: "UPDATE_CLEANER_DOCUMENTS_URL",
+  payload: documentUri
+})
