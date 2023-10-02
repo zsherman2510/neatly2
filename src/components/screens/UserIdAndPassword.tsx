@@ -3,6 +3,7 @@ import { useDispatch } from 'react-redux';
 import {StyleSheet, View, SafeAreaView, TextInput, TouchableOpacity, Text} from 'react-native';
 import CustomText from '../common/CustomText';
 import globalStyles from '../common/globalStyles';
+import BackButton from '../common/BackButton';
 import { registerUser } from '../../api/user';
 import { registerRequest, registerFailure, registerSuccess } from '../../redux/actions/userActions';
 
@@ -76,6 +77,7 @@ const UserIdAndPassword: React.FC<UserIdAndPasswordProps> = ({navigation}) => {
     <SafeAreaView>
       <View style={styles.container}>
         <View>
+        <BackButton />          
           <CustomText style={styles.header}>Create your login</CustomText>
         </View>
         <View>

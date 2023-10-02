@@ -11,7 +11,12 @@ export const updateCleanerSpeciality = (userData: CleaningDetails) => ({
   payload: userData
 });
 
-export const updateCleanerDocuments = (documentUri: string) => ({
-  type: "UPDATE_CLEANER_DOCUMENTS_URL",
-  payload: documentUri
+export const updateCleanerDocuments = (documents: any) => ({
+  type: "UPDATE_CLEANER_DOCUMENTS",
+  payload: documents
+})
+
+export const uploadProfilePicture = (picture: any) => ({
+  type: "UPLOAD_PROFILE_PICTURE",
+  payload: picture
 })

@@ -16,3 +16,10 @@ export type DocumentPickerResult = {
   output: FileList | null | undefined;
   // ... Any other properties that the result might have
 };
+
+export type Document = {
+  mimeType: string,
+  name: string,
+  size: number,
+  uri: string
+}

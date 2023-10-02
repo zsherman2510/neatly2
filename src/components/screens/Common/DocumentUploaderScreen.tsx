@@ -16,8 +16,7 @@ type DocumentProps = {
   navigation: any; // You can also use the specific type from @react-navigation/native if you've set up navigation
 };
 const DocumentUploader: React.FC<DocumentProps> = ({ navigation }) => {
-  const [document, setDocument] =
-    useState<DocumentPicker.DocumentPickerAsset | null>(null);
+  const [documents, setDocuments] = useState<DocumentPicker.DocumentPickerAsset[]>([]);
   const [documentURI, setDocumentURI] = useState<string>("");
 
   const dispatch = useDispatch();
@@ -25,8 +24,7 @@ const DocumentUploader: React.FC<DocumentProps> = ({ navigation }) => {
     try {
       const result = await DocumentPicker.getDocumentAsync({});
       if (!result.canceled) {
-        setDocument(result.assets[0]);
-        setDocumentURI(result.assets[0].uri);
+        setDocuments(prevDocs => [...prevDocs, result.assets[0]]);
       } else {
         console.log("Document picking was cancelled.");
       }
@@ -36,7 +34,8 @@ const DocumentUploader: React.FC<DocumentProps> = ({ navigation }) => {
   };
 
   const submitDocuments = () => {
-    dispatch(updateCleanerDocuments(documentURI));
+    dispatch(updateCleanerDocuments(documents));
+    navigation.navigate("UploadPicture");
   };
 
   return (
@@ -51,8 +50,10 @@ const DocumentUploader: React.FC<DocumentProps> = ({ navigation }) => {
       </View>
 
       <View style={styles.documentContainer}>
-        {document && (
-          <CustomText style={styles.text}>Selected: {document.name}</CustomText>
+        {documents.length > 0 && (
+          documents.map((doc, index) => (
+            <CustomText key={index} style={styles.text}>Selected: {doc.name}</CustomText>
+          ))
         )}
       </View>
 
@@ -72,7 +73,7 @@ const DocumentUploader: React.FC<DocumentProps> = ({ navigation }) => {
         </TouchableOpacity>
         <TouchableOpacity
           onPress={() => {
-            navigation.navigate("CleanerGetStarted");
+            navigation.navigate("UploadPicture");
           }}
         >
           <CustomText style={[globalStyles.hyperlink, styles.spacing]}>Skip Document Selection</CustomText>

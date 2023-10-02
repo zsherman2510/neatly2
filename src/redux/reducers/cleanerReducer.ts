@@ -17,6 +17,7 @@ const initialCleanerState = {
     hourlyRate: null,
   },
   documents: null,
+  picture: null,
   account: null,
   loading: false,
   error: null,
@@ -44,6 +45,12 @@ export const cleanerReducer = (state = initialCleanerState, action: any) => {
       return {
         ...state,
         documents: action.payload
+      }
+
+    case "UPLOAD_PROFILE_PICTURE":
+      return {
+        ...state,
+        picture: action.payload
       }
     case "REGISTER_CLEANER_REQUEST":
       return {
